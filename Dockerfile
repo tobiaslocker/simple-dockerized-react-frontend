@@ -16,9 +16,5 @@ COPY --from=build /app/build /usr/share/nginx/html
 # nginx configuration
 COPY nginx/nginx.conf /etc/nginx/conf.d/default.conf
 
-# certificates
-COPY www_decent_sh_chain.crt /etc/ssl/certs/decent.sh.chained.crt
-COPY decent.sh.key /etc/ssl/private/decent.sh.key
-
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
